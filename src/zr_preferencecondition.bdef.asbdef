@@ -1,0 +1,16 @@
+unmanaged implementation in class zbp_r_preferencecondition unique;
+strict ( 2 );
+
+define behavior for ZR_PreferenceCondition //alias <alias_name>
+//late numbering
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+
+  action ApplyCondtions result [1] $self;
+
+}

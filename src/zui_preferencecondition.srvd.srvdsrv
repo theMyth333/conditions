@@ -1,0 +1,4 @@
+@EndUserText.label: 'Preference condition'
+define service ZUI_PREFERENCECONDITION {
+  expose ZC_PreferenceCondition;
+}

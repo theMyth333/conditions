@@ -1,0 +1,109 @@
+@Metadata.layer: #CORE
+@UI:{ headerInfo:
+      {
+        typeName      : 'Condition',
+        typeNamePlural: 'Conditions',
+        title:
+        {
+           type       : #STANDARD,
+           label      : 'Commodity Code',
+           value      : 'CommodityCode'
+        }
+      }
+}
+@UI.textArrangement: #TEXT_LAST
+annotate entity ZC_PreferenceCondition with
+{
+
+  @UI.facet: [
+                 {
+                   id       :  'GeneralInformation',
+                   type     :  #COLLECTION,
+                   purpose  :  #STANDARD,
+                   label    :  'Conditions',
+                   position :   10
+                 },
+
+                 {
+                   id             : 'GeneralDataFldGrp',
+                   type           : #IDENTIFICATION_REFERENCE,
+                   purpose        : #STANDARD,
+                   parentId       : 'GeneralInformation',
+                   position       : 10
+                 }
+
+  //                   {
+  //                     id             : 'GeneralDataFldGrp',
+  //                     type           : #FIELDGROUP_REFERENCE,
+  //                     purpose        : #STANDARD,
+  //                     parentId       : 'GeneralInformation',
+  //                     position       : 10,
+  //                     targetQualifier: 'GeneralDataFldGrp',
+  //                     label          : 'General Data'
+  //                   }
+              ]
+
+  @UI: {
+  //  fieldGroup : [{ qualifier: 'GeneralDataFldGrp', position: 0 }],
+  lineItem : [{ position: 10, type: #FOR_ACTION, dataAction: 'ApplyCondtions', label: 'Apply Condtions' }
+//              { position: 10 } 
+             ],
+  selectionField : [{ position: 10 }]
+//  lineItem       : [{ position: 10 }]
+//  identification: [{ position: 10 }]
+  }
+  Product;
+  @UI: {
+  selectionField : [{ position: 20 }]
+//  lineItem       : [{ position: 20 }]
+//  identification: [{ position: 20 }]
+  }
+  CommodityCode;
+  @UI: {
+  selectionField : [{ position: 30 }],
+  lineItem       : [{ position: 30 }]
+//  identification: [{ position: 30 }]
+  }
+  ConditionNumber;
+  @UI: {
+  //  selectionField : [{ position: 40 }],
+  lineItem       : [{ position: 40 }],
+  identification: [{ position: 40 }]
+  }
+  Agreement;
+  @UI: {
+  //  selectionField : [{ position: 50 }],
+  lineItem       : [{ position: 50 }],
+  identification: [{ position: 50 }]
+  }
+  PreferenceCondition;
+  @UI: {
+  //  selectionField : [{ position: 60 }],
+  lineItem       : [{ position: 60 }],
+  identification: [{ position: 60 }]
+  }
+  Description;
+  @UI: {
+  //  selectionField : [{ position: 70 }],
+  lineItem       : [{ position: 70 }],
+  identification: [{ position: 70 }]
+  }
+  ValidFrom;
+  @UI: {
+  //  selectionField : [{ position: 80 }],
+  lineItem       : [{ position: 80 }],
+  identification: [{ position: 80 }]
+  }
+  Validto;
+  @UI: {
+  //  selectionField : [{ position: 90 }],
+  lineItem       : [{ position: 90, cssDefault:{width: '10rem'} }],
+  identification: [{ position: 90 }]
+  }
+  ConditionApply;
+  @UI.hidden: true
+  LocalLastChanged;
+  @UI.hidden: true
+  LastChanged;
+
+}
